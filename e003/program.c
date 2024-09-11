@@ -3,12 +3,32 @@
 
 // Função com as informações da tela inicial
 int infoInicial(){
-    printf("\nCALCULADORA DE JUROS COMPOSTOS\n");
-    printf("-----------------------------------");
-    printf("\nBem vindo a calculadora de Juros compostos!");
-    printf("\n\nOs dados inseridos devem ser separados por \".\" no lugar\nde \",\" para que o cálculo seja apresentado corretamente.\n");
-    printf("\nA taxa de correção de aporte é o quanto será\n aumentado, anualmente, no seu aporte.\n");
-    printf("-----------------------------------\n\n");
+    printf(
+        "\nCALCULADORA DE JUROS COMPOSTOS\n"
+        "-----------------------------------"
+        "\nBem vindo a calculadora de Juros compostos!\n"
+        "\nOs dados inseridos devem ser separados por \".\" no lugar\n"
+        "de \",\" para que o cálculo seja apresentado corretamente.\n"
+        "\nA taxa de correção de aporte é o quanto será aumentado, anualmente,\nno seu aporte.\n"
+        "-----------------------------------\n\n");
+}
+
+int geraMeses(int m, float apIni, float apMen, float j, float t){
+    printf(
+                "Mês nº %d\n"
+                "-----------------------------\n",
+                m);
+            if (m < 2){
+                printf("Aporte\t:\tR$ %.2f\n", apIni);
+            }
+            else{
+                printf("Aporte\t:\tR$ %.2f\n", apMen);
+            }
+            printf(
+                "Juros\t:\tR$ %.2f\n"
+                "Total\t:\tR$ %.2f\n"
+                "-----------------------------\n\n",
+                j, t);
 }
 
 int main(){
@@ -57,17 +77,7 @@ int main(){
                 count = 0;
             }
             
-            printf("Mês nº %d\n", i);
-            printf("-----------------------------\n");
-            if (i < 2){
-                printf("Aporte\t:\tR$ %.2f\n", aporteInicial);
-            }
-            else{
-                printf("Aporte\t:\tR$ %.2f\n", aporteMensal);
-            }
-            printf("Juros\t:\tR$ %.2f\n", juros);
-            printf("Total\t:\tR$ %.2f\n", total);
-            printf("-----------------------------\n\n");
+            geraMeses(i, aporteInicial, aporteMensal, juros, total);
 
             aporteTotal += aporteMensal;
             jurosTotais += juros;
@@ -76,12 +86,14 @@ int main(){
     }
 
     // Retornamos os dados totais ao usuário
-    printf("Tempo: %d ano(s)\n", tempo);
-    printf("Taxa: %.2f%% a.a\n", taxa);
-    printf("-----------------------------------\n");
-    printf("Aporte total\t:\tR$ %.2f\n", aporteTotal);
-    printf("Juros totais\t:\tR$ %.2f\n", jurosTotais);
-    printf("Total acumulado\t:\tR$ %.2f\n\n", total);
+    printf(
+        "Tempo: %d ano(s)\n"
+        "Taxa: %.2f%% a.a\n"
+        "-----------------------------------\n"
+        "Aporte total\t:\tR$ %.2f\n"
+        "Juros totais\t:\tR$ %.2f\n"
+        "Total acumulado\t:\tR$ %.2f\n\n",
+        tempo, taxa, aporteTotal, jurosTotais, total);
 
     return (0);
 }
