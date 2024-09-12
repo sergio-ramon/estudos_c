@@ -73,12 +73,12 @@ int main(){
         printf("Digite a taxa anual: ");
         result = scanf("%f", &taxa);
         limpaBuffer();
-    }while (result != 1 || taxa < 0);
+    }while (result != 1 || taxa < 0 || taxa > 100);
     do{
         printf("Digite a taxa de correção de aporte: ");
         result = scanf("%f", &taxaAporte);
         limpaBuffer();
-    }while (result != 1 || taxaAporte < 0);
+    }while (result != 1 || taxaAporte < 0 || taxaAporte > 100);
     do{
         printf("Digite o tempo em anos: ");
         result = scanf("%i", &tempo);
