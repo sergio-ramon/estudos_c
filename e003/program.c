@@ -15,6 +15,11 @@ void infoInicial(){
         "-----------------------------------\n\n");
 }
 
+void limpaBuffer(){
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF){};
+}
+
 // Pega as informações e printa na tela, mês a mês até a quantidade
 // solicitada.
 void geraMeses(int m, float apIni, float apMen, float j, float t){
@@ -48,22 +53,37 @@ void totais(float *apTotal, float apMen, float *jTotal, float j){
 int main(){
     float aporteInicial = 0, aporteMensal = 0, taxa = 0, taxaAporte = 0;
     float total = 0, juros = 0, aporteTotal = 0, jurosTotais = 0;
-    int tempo = 0, count = 0;
+    int tempo = 0, count = 0, result;
     
     // Chama as infos da tela incial
     infoInicial();
 
     // Coleta os dados do aporte, taxa e tempo do usuário
-    printf("Digite o aporte inicial: ");
-    scanf("%f", &aporteInicial);
-    printf("Digite o aporte mensal: ");
-    scanf("%f", &aporteMensal);
-    printf("Digite a taxa anual: ");
-    scanf("%f", &taxa);
-    printf("Digite a taxa de correção de aporte: ");
-    scanf("%f", &taxaAporte);
-    printf("Digite o tempo em anos: ");
-    scanf("%i", &tempo);
+    do{
+        printf("Digite o aporte inicial: ");
+        result = scanf("%f", &aporteInicial);
+        limpaBuffer();
+    }while (result != 1 || aporteInicial < 0);
+    do{
+        printf("Digite o aporte mensal: ");
+        result = scanf("%f", &aporteMensal);
+        limpaBuffer();
+    }while (result != 1 || aporteMensal < 0);
+    do{
+        printf("Digite a taxa anual: ");
+        result = scanf("%f", &taxa);
+        limpaBuffer();
+    }while (result != 1 || taxa < 0);
+    do{
+        printf("Digite a taxa de correção de aporte: ");
+        result = scanf("%f", &taxaAporte);
+        limpaBuffer();
+    }while (result != 1 || taxaAporte < 0);
+    do{
+        printf("Digite o tempo em anos: ");
+        result = scanf("%i", &tempo);
+        limpaBuffer();
+    }while (result != 1 || tempo <= 0);
 
     // Atualiza o total final com o valor de aporte inicial
     aporteTotal += aporteInicial;
@@ -111,9 +131,8 @@ int main(){
 
     // Retornamos os dados totais ao usuário
     printf(
-        "Tempo: %d ano(s)\n"
-        "Taxa: %.2f%% a.a\n"
-        "-----------------------------------\n"
+        "Seus resultados após %d anos, considerando %.2f%% a.a:\n"
+        "-------------------------------------------------------\n"
         "Aporte total\t:\tR$ %.2f\n"
         "Juros totais\t:\tR$ %.2f\n"
         "Total acumulado\t:\tR$ %.2f\n\n",
