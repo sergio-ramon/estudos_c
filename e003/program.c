@@ -105,8 +105,8 @@ void calculoMensal(float *j, float *t, float taxa, float ap){
 }
 
 // Atualizamos os totais que serão exibidos no final do programa
-void totais(float *apTotal, float apMen, float *jTotal, float j){
-    *apTotal += apMen;
+void totais(float *apTotal, float ap, float *jTotal, float j){
+    *apTotal += ap;
     *jTotal += j;
 }
 
@@ -150,52 +150,47 @@ int main(){
             taxa = coletaDados("Digite a taxa anual: ", 0, 100);
             taxaAporte = coletaDados("Digite a taxa de correção de aporte: ", 0, 100);
             tempo = (int) coletaDados("Digite o tempo em anos: ", 1, 1000);
-        }while (confirma(aporteInicial, aporteMensal, taxa, taxaAporte, tempo) == 1); 
-
-        // Atualiza o total final com o valor de aporte inicial
-        aporteTotal += aporteInicial;
+        }while (confirma(aporteInicial, aporteMensal, taxa, taxaAporte, tempo) == 1);
 
         // Limpa a tela
         limpaTela();
+
+        printf(
+            "------------------------------------ "
+            "%dº ano\n", 1);
         
         // Fazemos um for loop para que os cálculos sejam executados
         // até a quantidade de meses desejada pelo usuário.
-        for (int i = 0; i <= tempo*12; i++) {
-            // Caso seja o início da contagem, mostramos como 1º ano
-            if (i == 0) {
-                printf(
-                    "------------------------------------ "
-                    "%dº ano\n", ((i/12)+1));
-            }
+        for (int i = 1; i <= tempo*12; i++) {
+            // A cada 12 meses, imprimimos na tela o número do ano que
+                // será calculado a partir do próximo mês
+                if (count == 12){
+                    printf(
+                        "------------------------------------ "
+                        "%dº ano\n", ((i/12)+1));
+
+                    // Usamos a informação de taxa de correção para corrigir o valor do aporte a cada ano
+                    aporteMensal += aporteMensal * (taxaAporte/100);
+                    count = 0;
+                }
             // Se não, seguimos contando os anos posteriores
             else {
                 // Caso seja o primeiro mês, levaremos em conta o aporte
                 // inicial para começo de cálculos
                 if (i < 2){
                     calculoMensal(&juros, &total, taxa, aporteInicial);
+                    // Atualização das variáveis para apresentação no final
+                    totais(&aporteTotal, aporteInicial, &jurosTotais, juros);
                 }
                 else {
                     calculoMensal(&juros, &total, taxa, aporteMensal);
+                    // Atualização das variáveis para apresentação no final
+                    totais(&aporteTotal, aporteMensal, &jurosTotais, juros);
                 }
-                
-                // A cada 12 meses, imprimimos na tela o número do ano que
-                // será calculado a partir do próximo mês
-                count++;
-                if (count == 12){
-                    printf(
-                        "------------------------------------ "
-                        "%dº ano\n", ((i/12)+1));
 
-                    // Usamos a informação de taxa de correção para corrigir
-                    // o valor do aporte a cada ano
-                    aporteMensal += aporteMensal * (taxaAporte/100);
-                    count = 0;
-                }
-                
                 geraMeses(i, aporteInicial, aporteMensal, juros, total);
-
-                // Atualização das variáveis para apresentação no final
-                totais(&aporteTotal, aporteMensal, &jurosTotais, juros);
+                
+                count++;
             }
         }
 
