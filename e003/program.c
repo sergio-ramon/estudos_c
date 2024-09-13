@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 // Imprime as informações iniciais na tela, no começo da
 // execução do programa
@@ -115,6 +116,7 @@ int fim(){
 
     do {
         printf(
+            "\nO que deseja fazer?\n\n"
             "1 - Novo cálculo\t\t2 - Finalizar\n"
             "-----------------------------------------------\n"
             "Escolha a opção desejada: ");
@@ -127,6 +129,9 @@ int fim(){
 
 // Início do programa
 int main(){
+    system("chcp 65001");
+    setlocale(LC_ALL, "Português");
+
     do {
         float aporteInicial = 0, aporteMensal = 0, taxa = 0, taxaAporte = 0;
         float total = 0, juros = 0, aporteTotal = 0, jurosTotais = 0;
@@ -200,7 +205,7 @@ int main(){
             "------------------------------------------------------------\n"
             "Aporte total realizado\t\t\t:\tR$ %.2f\n"
             "Juros totais ganhos\t\t\t:\tR$ %.2f\n"
-            "Total acumulado ao final do período\t:\tR$ %.2f\n\n",
+            "Total acumulado ao final do período\t:\tR$ %.2f\n",
             tempo, taxa, aporteTotal, jurosTotais, total);
     }while (fim() == 1);
 
