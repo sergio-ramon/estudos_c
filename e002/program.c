@@ -1,3 +1,11 @@
+/* 
+Objetivo: Calcular a média entre quatro números digitados
+pelo usuário
+Entradas: Quatro números inteiros
+Processo: Calcular a média entre os quatro números
+Saídas: Média
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>

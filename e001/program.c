@@ -1,3 +1,11 @@
+/*
+Objetivo: Coleta um número inteiro e retorna a sua raiz
+e o produto da sua elevação ao quadrado
+Entradas: Um número inteiro
+Processo: Calcular potencia e raiz quadrada do número
+Saídas: Quadrado e raiz
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
