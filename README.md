@@ -1,13 +1,17 @@
 # estudos_c
- Estudos em linguagem C
+ Estudos em linguagem C feitos a partir do material didático complementar da disciplina "Algoritmos e Lógica de Programação" do primeiro ano da faculdade de ADS na Unicesumar.
 
 ## Exercício 001
 
-Se trata de um exercício feito a partir do material didático da faculdade no qual criei um algoritimo capaz de pegar um número inteiro e retonar o quadrado e a raíz desse número.
+Exercício Proposto 01 - Fundamentos da Programação de Computadores
 
 ## Exercício 002
 
-Exercício criado ainda durante exercícios do material didático da faculdade onde temos um algoritimo que pega quatro números digitados pelo usuário e retorna a média aritimética entre eles.
+Exercício Proposto 02 - Fundamentos da Programação de Computadores
+
+## Exercício 003
+
+Exercício Proposto 03 - Fundamentos da Programação de Computadores
 
 ## Exercício 003
 
