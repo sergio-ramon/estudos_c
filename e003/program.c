@@ -138,7 +138,7 @@ int main(){
     do { // Looping do programa até finalização
         float aporteInicial = 0, aporteMensal = 0, taxa = 0, taxaAporte = 0;
         float total = 0, juros = 0, aporteTotal = 0, jurosTotais = 0;
-        int tempo = 0, count = 0, result;
+        int tempo = 0, count = 0;
         
         do{ // Looping de coleta de dados
 
