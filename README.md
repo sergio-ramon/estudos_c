@@ -1,17 +1,7 @@
-# estudos_c
+Aqui estou postando estudos feitos durante a faculdade utilizando a liguagem C em acompanhamento de livros didáticos curriculares e/ou complementares.
+
+## fund_program
  Estudos em linguagem C feitos a partir do material didático complementar da disciplina "Algoritmos e Lógica de Programação" do primeiro ano da faculdade de ADS na Unicesumar.
-
-## Exercício 001
-
-Exercício Proposto 01 - Fundamentos da Programação de Computadores
-
-## Exercício 002
-
-Exercício Proposto 02 - Fundamentos da Programação de Computadores
-
-## Exercício 003
-
-Exercício Proposto 03 - Fundamentos da Programação de Computadores
 
 ## Exercício 003
 
