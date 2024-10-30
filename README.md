@@ -1,7 +1,10 @@
 Aqui estou postando estudos feitos durante a faculdade utilizando a liguagem C em acompanhamento de livros didáticos curriculares e/ou complementares.
 
 ## fund_program
- Estudos em linguagem C feitos a partir do material didático complementar da disciplina "Algoritmos e Lógica de Programação" do primeiro ano da faculdade de ADS na Unicesumar.
+Estudos em linguagem C feitos a partir do material didático complementar da disciplina "Algoritmos e Lógica de Programação" do primeiro ano da faculdade de ADS na Unicesumar.
+
+## livro_faculdade
+Estudos e exercícios feitos utilizando a linguagem C a partir do conteúdo do livro Linguagem e Técnicas de Programação. Esse conteúdo é parte da segunda matéria do primeiro módulo do curso de ADS da Unicesumar.
 
 ## Exercício 003
 
