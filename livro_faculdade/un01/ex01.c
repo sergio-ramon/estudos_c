@@ -1,5 +1,5 @@
 /*
-    Escreva um programa que leia um número inteiro e apresente seu antecessor e seu sucessor.
+    Escreva um programa que leia o nome de uma pessoa e imprima a seguinte mensagem, na tela: “Bem-vindo(a) à disciplina de Algoritmos e Lógica de Programação II, <nome>”; onde o campo <nome> deve ser substituído pelo nome informado pelo usuário.
 */
 
 #include <stdio.h>
@@ -9,18 +9,13 @@
 int main() {
     setlocale(LC_ALL, "Português");
     system("chcp 65001");
-    system("cls");
 
-    int num, ant, suc;
+    char nome[30];
 
-    printf("Digite um número inteiro: ");
-    scanf("%d%*c", &num);
+    printf("Digite seu primeiro nome: ");
+    scanf("%s%*c", nome);
 
-    ant = num - 1;
-    suc = num + 1;
-
-    printf("\nO antecessor do número é: %d", ant);
-    printf("\nO sucessor do número é: %d", suc);
+    printf("\nBem vindo à disciplina de Algoritmos e Lógica de Programação II, %s!", nome);
 
     return 0;
 }

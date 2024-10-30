@@ -1,5 +1,9 @@
 /*
-    Escreva um programa que receba dois números, calcule e apresente o resultado do primeiro número elevado ao segundo.
+    Escreva um programa que, dado o raio de um círculo, calcule
+    sua área e o perímetro. A área é a superfície do objeto, dada
+    por A = πt², e o perímetro é a medida do contorno do objeto
+    dado por P = 2πr². Dica: utilize as funções intrínsecas
+    vistas nesta unidade.
 */
 
 #include <stdio.h>
@@ -11,16 +15,16 @@ int main() {
     setlocale(LC_ALL, "Português");
     system("chcp 65001");
 
-    float num1, num2, res;
+    float r, a, p;
 
-    printf("Digite o primeiro número: ");
-    scanf("%f%*c", &num1);
-    printf("Digite o segundo número: ");
-    scanf("%f%*c", &num2);
+    printf("Digite o valor do raio: ");
+    scanf("%f%*c", &r);
 
-    res = pow(num1, num2);
+    a = 3.1415 * (r * r);
+    p = 2 * 3.1415 * (r * r);
 
-    printf("\nO resultado de %.2f elevado a %.2f é: %.2f", num1, num2, res);
+    printf("\nA área do círculo é: %.2f", a);
+    printf("\nO perímetro do círculo é: %.2f", p);
 
     return 0;
 }

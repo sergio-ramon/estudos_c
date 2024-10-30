@@ -1,5 +1,9 @@
 /*
-    Faça um programa que receba o valor de um depósito e o valor da taxa de juros, calcule e apresente o valor do rendimento e o valor total (valor do depósito + valor do rendimento).
+    Escreva um programa que receba quatro números inteiros,
+    calcule e apresente a média aritmética entre eles.
+    Observação: não esqueça de formatar o valor da média no
+    momento de apresentá-lo, para que sejam impressas apenas duas
+    casas decimais.
 */
 
 #include <stdio.h>
@@ -10,18 +14,20 @@ int main() {
     setlocale(LC_ALL, "Português");
     system("chcp 65001");
 
-    float dep, tax, rend, total;
+    float num1, num2, num3, num4, med;
 
-    printf("Digite o valor depositado: ");
-    scanf("%f%*c", &dep);
-    printf("Digite a taxa de juros: ");
-    scanf("%f%*c", &tax);
+    printf("Digite o primeiro número: ");
+    scanf("%f%*c", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%f%*c", &num2);
+    printf("Digite o terceiro número: ");
+    scanf("%f%*c", &num3);
+    printf("Digite o quarto número: ");
+    scanf("%f%*c", &num4);
 
-    rend = dep * tax/100;
-    total = dep + rend;
+    med = (num1 + num2 + num3 + num4) / 4;
 
-    printf("\nO valor do rendimento é: %.2f", rend);
-    printf("\nO valor acumulado é: %.2f", total);
+    printf("\nA média aritmética dos números é: %.2f", med);
 
     return 0;
 }
