@@ -1,6 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
     "files.associations": {
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "walk.h": "c",
+        "texts.h": "c"
     }
 }
