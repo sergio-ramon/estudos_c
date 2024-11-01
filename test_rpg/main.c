@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "walk.h"
 #include "actions.h"
+#include "walk.h"
 
 #define lines 6
 #define cols 23
