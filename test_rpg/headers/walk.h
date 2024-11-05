@@ -1,1 +1,0 @@
-char walk(int op, int lines, int cols, char table[lines][cols]);
